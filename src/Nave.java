@@ -8,6 +8,23 @@ public class Nave {
 
 	private Propulsion propulsion;
 
+
+	public void setArmas(Armas arma){
+		armas = arma;
+	}
+
+	public void setBlindaje(Blindaje blindaje){
+		this.blindaje = blindaje;
+	}
+
+	public void setCabina(Cabina cabina){
+		this.cabina = cabina;
+	}
+
+	public void setPropulsion(Propulsion propulsion){
+		this.propulsion = propulsion;
+	}
+
 	
 		
 	public void desgloseNave() {

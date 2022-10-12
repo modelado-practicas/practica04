@@ -3,7 +3,7 @@ public class LaserDestructorPlanetas extends Armas{
 
 	@Override
 	public String nombre() {
-		return "Laser simple";
+		return "Laser destructor de planetas";
 	}
 
 	@Override
