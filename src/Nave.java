@@ -1,62 +1,53 @@
-import java.util.LinkedList;
-
 public class Nave {
-	private LinkedList<Pieza> piezas = 
-			new LinkedList<Pieza>();
+
+	private Armas armas;
+
+	private Blindaje blindaje;
+
+	private Cabina cabina;
+
+	private Propulsion propulsion;
+
 	
-	public void agregaPieza(Pieza piece){
-	      piezas.add(piece);
-	   }
-	
+		
 	public void desgloseNave() {
-		for(Pieza pie : piezas) {
-			System.out.println("Pieza: " + pie.nombre() + "  ||  "
-					+ "Precio: " + pie.precio() + "\n"
-							+ pie.descripcion());
-		}
+		System.out.println(desglosePieza(cabina) + desglosePieza(blindaje) 
+			+ desglosePieza(propulsion) + desglosePieza(armas));
 	}
 	
-	 public double hacerCuenta(){
-	      double cost = 0;
-	      
-	      for (Pieza pie : piezas) {
-	         cost += pie.precio();
-	      }		
-	      return cost;
-	   }
+	
+	public double precioFinal(){
+	 	return armas.precio() + blindaje.precio() 
+	 	+ cabina.precio() + propulsion.precio();
+	}
+	   
 	 
-	 public double ataqueFinal(){
-		 double attack = 0;
-		 for (Pieza pie : piezas) {
-	         attack += pie.ataque();
-	      }
-		 return attack;
-	 }
+	public double ataqueFinal(){
+		return armas.ataque() + blindaje.ataque() 
+	 	+ cabina.ataque() + propulsion.ataque();
+	}
+	
 	 
-	 public double defensaFinal(){
-		 double def = 0;
-		 for (Pieza pie : piezas) {
-	         def += pie.defensa();
-	      }
-		 return def;
-	 }
+	public double defensaFinal(){
+	 	return armas.defensa() + blindaje.defensa() 
+	 	+ cabina.defensa() + propulsion.defensa();
+	}
+
 	 
-	 public double velocidadFinal(){
-		 double vel = 0;
-		 for (Pieza pie : piezas) {
-	         vel += pie.velocidad();
-	      }
-		 return vel;
-	 }
+	public double velocidadFinal(){
+		return armas.velocidad() + blindaje.velocidad() 
+	 	+ cabina.velocidad() + propulsion.velocidad();
+	}
 	 
-	 public double pesoFinal(){
-		 double peso = 0;
-		 for (Pieza pie : piezas) {
-	         peso += pie.peso();
-	      }
-		 return peso;
-	 }
-	 
-	 
+	public double pesoFinal(){
+		return armas.peso() + blindaje.peso() 
+	 	+ cabina.peso() + propulsion.peso();
+	}
+
+	private String desglosePieza(Pieza piece) {
+		return "Pieza: "+ piece.nombre() + " || Precio: " + piece.precio() 
+		+ "\n" + piece.descripcion() + "\n"; 
+
+	}
 
 }
