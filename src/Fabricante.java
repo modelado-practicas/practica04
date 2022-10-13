@@ -3,7 +3,12 @@ import java.util.Scanner;
 public class Fabricante{
 	
 
-	public Nave crearNaveIndividual(){
+	/**
+     * Metodo builder correspondiente a una nave individual de combate
+     * Cuenta con un sistema de misiles de plasma, blindaje reforzado,
+     * cabina para un piloto y propulsion intercontinental
+     */
+    public Nave crearNaveIndividual(){
        Nave nave = new Nave();
        nave.setArmas(new MisilesDePlasma());
        nave.setBlindaje(new BlindajeReforzado());
@@ -16,7 +21,12 @@ public class Fabricante{
 
 
 
-	public Nave crearNaveTransporte(){
+	/**
+     * Metodo builder correspondiente a una nave militar de transporte
+     * Cuenta con un sistema de laser simple, blindaje simple,
+     * cabina para una tripulacion pequena, y propulsion intergalactica
+     */ 
+    public Nave crearNaveTransporte(){
         Nave nave = new Nave();
         nave.setArmas(new LaserSimple());
         nave.setBlindaje(new BlindajeSimple());
@@ -30,7 +40,12 @@ public class Fabricante{
     
 
 
-	public Nave crearBaseEspacial(){
+	/**
+     * Metodo builder correspondiente a una base espacial de guerra
+     * Cuenta con un sistema de laser destructor de planetas, blindaje de tipo fortaleza,
+     * cabina para un ejercito y propulsion interplanetaria
+     */ 
+    public Nave crearBaseEspacial(){
         Nave nave = new Nave();
         nave.setArmas(new LaserDestructorPlanetas());
         nave.setBlindaje(new BlindajeFortaleza());
@@ -43,7 +58,12 @@ public class Fabricante{
 
 
 
-	public Nave crearNave(){
+	/**
+     * Metodo builder general
+     * Puede crear cualquier combinación de nave permitida
+     * Delega la creacion a los constructores
+     */
+    public Nave crearNave(){
         Nave nave = new Nave();
         nave.setArmas(crearArmas());
         nave.setBlindaje(crearBlindaje());
@@ -54,12 +74,10 @@ public class Fabricante{
 
 	}
 
-
-
-
-
-
-
+    /**
+     * Constructor de los distintos tipos de blindajes
+     * @return Blindaje del tipo seleccionado
+     */
 	private Blindaje crearBlindaje(){
 		Scanner sc = new Scanner(System.in);
 		int opcion;
@@ -109,7 +127,11 @@ public class Fabricante{
 	
 
 
-	private Propulsion crearPropulsion(){
+	/**
+     * Constructor de los distintos tipos de propulsiones
+     * @return Propulsion del tipo seleccionado
+     */
+    private Propulsion crearPropulsion(){
 		Scanner sc = new Scanner(System.in);
 		int opcion;
 
@@ -159,7 +181,11 @@ public class Fabricante{
 
 	
 
-	private Cabina crearCabina(){
+	/**
+     * Constructor de los distintos tipos de cabinas
+     * @return Cabina del tipo seleccionado
+     */
+    private Cabina crearCabina(){
 		Scanner sc = new Scanner(System.in);
 		int opcion;
 
@@ -207,7 +233,11 @@ public class Fabricante{
 
 
 
-	private Armas crearArmas(){
+	/**
+     * Constructor de los distintos sistemas de armas
+     * @return Armas del tipo seleccionado
+     */
+    private Armas crearArmas(){
 		Scanner sc = new Scanner(System.in);
 		int opcion;
 
